@@ -31,6 +31,7 @@ public class User {
     private String email;
     private String password;
 
+
     public User(Long id, String firstName, String lastName, String email, String password) {
         this.id = id;
         this.firstName = firstName;
@@ -42,16 +43,6 @@ public class User {
     public User() {
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 
     public Long getId() {
         return id;
@@ -92,4 +83,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }
