@@ -13,9 +13,9 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    private OrdersRepository ordersRepository;
-    private PaymentRepository paymentRepository;
-    private UserRepository userRepository;
+    private final OrdersRepository ordersRepository;
+    private final PaymentRepository paymentRepository;
+    private final UserRepository userRepository;
 
 
     public OrderServiceImpl(OrdersRepository ordersRepository, PaymentRepository paymentRepository, UserRepository userRepository) {
@@ -42,6 +42,18 @@ public class OrderServiceImpl implements OrderService {
         userRepository.save(user);
         return orders1;
     }
+
+    @Override
+    public List<Orders> findAllOrders() {
+        return ordersRepository.findAll();
+    }
+
+    @Override
+    public List<Orders> findAllOrdersByUser(Long id) {
+        return ordersRepository.findOrdersByUserId(id);
+    }
+
+
 
 
 }

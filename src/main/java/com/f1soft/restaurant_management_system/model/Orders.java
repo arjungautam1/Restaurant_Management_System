@@ -5,6 +5,8 @@
  */
 package com.f1soft.restaurant_management_system.model;
 
+import net.minidev.json.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 

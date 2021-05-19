@@ -5,6 +5,8 @@
  */
 package com.f1soft.restaurant_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -87,10 +89,12 @@ public class User {
         this.password = password;
     }
 
+
     public List<Orders> getOrdersList() {
         return ordersList;
     }
 
+    @JsonIgnore
     public void setOrdersList(List<Orders> ordersList) {
         this.ordersList = ordersList;
     }
