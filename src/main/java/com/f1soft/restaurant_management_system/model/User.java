@@ -2,7 +2,6 @@
  * @author Arjun Gautam
  * Project :restaurant_management_system
  * Date : 2021-05-19
- * Time : 09:41
  */
 package com.f1soft.restaurant_management_system.model;
 
@@ -11,6 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*
+       {
+        "firstName": "Arjun",
+        "lastName": "Gautam",
+        "email": "arjungautam5431@gmail.com",
+        "password": "password"
+        }
+*/
 @Entity
 public class User {
 
