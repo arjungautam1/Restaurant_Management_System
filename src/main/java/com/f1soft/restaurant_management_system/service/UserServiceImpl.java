@@ -4,8 +4,10 @@
  * Date : 2021-05-19
  * Time : 09:48
  */
-package com.f1soft.restaurant_management_system.user;
+package com.f1soft.restaurant_management_system.service;
 
+import com.f1soft.restaurant_management_system.model.User;
+import com.f1soft.restaurant_management_system.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

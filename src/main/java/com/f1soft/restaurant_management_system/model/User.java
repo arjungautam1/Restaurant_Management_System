@@ -4,7 +4,7 @@
  * Date : 2021-05-19
  * Time : 09:41
  */
-package com.f1soft.restaurant_management_system.user;
+package com.f1soft.restaurant_management_system.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -4,9 +4,9 @@
  * Date : 2021-05-19
  * Time : 09:53
  */
-package com.f1soft.restaurant_management_system.user.security;
+package com.f1soft.restaurant_management_system.security;
 
-import com.f1soft.restaurant_management_system.user.User;
+import com.f1soft.restaurant_management_system.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
