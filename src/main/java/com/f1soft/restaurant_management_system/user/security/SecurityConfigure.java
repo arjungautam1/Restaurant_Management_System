@@ -6,6 +6,7 @@
  */
 package com.f1soft.restaurant_management_system.user.security;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -22,7 +23,7 @@ public class SecurityConfigure extends WebSecurityConfigurerAdapter {
 
     private UserDetailsService userDetailsService;
 
-    public SecurityConfigure(UserDetailsService userDetailsService) {
+    public SecurityConfigure(@Qualifier("customUserService") UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
