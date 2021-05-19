@@ -5,10 +5,8 @@
  */
 package com.f1soft.restaurant_management_system.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /*
        {
@@ -30,6 +28,11 @@ public class User {
 
     private String email;
     private String password;
+
+
+    @OneToMany
+    private List<Orders> ordersList;
+
 
 
     public User(Long id, String firstName, String lastName, String email, String password) {
@@ -84,5 +87,11 @@ public class User {
         this.password = password;
     }
 
+    public List<Orders> getOrdersList() {
+        return ordersList;
+    }
 
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
+    }
 }
