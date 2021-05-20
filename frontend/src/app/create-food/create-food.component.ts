@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Food} from "../Food";
+import {Router} from "@angular/router";
+import {FoodService} from "../food.service";
 
 @Component({
   selector: 'app-create-food',
@@ -7,9 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateFoodComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  food: Food = new Food();
+  submitted = false;
+
+  constructor(private foodService:FoodService,
+              private router: Router) { }
+
+  ngOnInit() {
   }
 
+  newFood(): void {
+    this.submitted = false;
+    this.food = new Food();
+  }
+
+  save() {
+    this.foodService
+        .createFood(this.food).subscribe(data => {
+          console.log(data)
+          this.food = new Food();
+          this.gotoList();
+        },
+        error => console.log(error));
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
+  gotoList() {
+    this.router.navigate(['/foodItem']);
+  }
 }

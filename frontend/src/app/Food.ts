@@ -5,7 +5,4 @@ export class Food{
   price: number;
   description: string;
 
-
-
-
 }

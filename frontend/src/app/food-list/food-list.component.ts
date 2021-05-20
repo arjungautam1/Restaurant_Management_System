@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FoodService} from "../food.service";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs";
+import {Food} from "../Food";
 
 @Component({
   selector: 'app-food-list',
@@ -8,13 +10,18 @@ import {Router} from "@angular/router";
   styleUrls: ['./food-list.component.css']
 })
 export class FoodListComponent implements OnInit {
+  foods: Observable<Food[]>;
 
   constructor(private foodService: FoodService,
-              private router: Router
-  ) {
+              private router: Router) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.foods = this.foodService.getFoodItemList();
   }
 
 }
