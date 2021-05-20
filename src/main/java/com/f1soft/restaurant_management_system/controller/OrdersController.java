@@ -41,11 +41,6 @@ public class OrdersController {
         return ordersService.findAllOrdersByUser(id);
     }
 
-    @GetMapping("/totalAmount/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public double getTotalAmount(@PathVariable("id") Long orderId){
-        return ordersService.getTotalAmount(orderId);
-    }
 
 
 }
